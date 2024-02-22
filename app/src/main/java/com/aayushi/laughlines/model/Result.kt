@@ -4,7 +4,7 @@ package com.aayushi.laughlines.model
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
-@Serializable
+
 data class Result(
     @SerialName("author")
     val author: String,
