@@ -9,18 +9,18 @@ import retrofit2.http.Query
 
 interface ApiService {
 
-//    @GET("/quotes/random")
-//    suspend fun getRandomQuote(): List<Quote>
+    @GET("/quotes/random")
+    suspend fun getRandomQuote(): List<Quote>
 
     @GET("/quotes")
     suspend fun getAllQuotes(
         @Query("page") page: Int,
     ): Quote
 
-//    @GET("/search/quotes")
-//    suspend fun searchQuotes(
-//        @Query("query") query: String,
-//        @Query("page") page: Int,
-//    ): List<Quote>
+    @GET("/search/quotes")
+    suspend fun searchQuotes(
+        @Query("query") query: String,
+        @Query("page") page: Int,
+    ): List<Quote>
 
 }

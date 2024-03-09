@@ -1,10 +1,12 @@
 package com.aayushi.laughlines
 
 import android.os.Bundle
+import android.window.SplashScreen
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
-import com.aayushi.laughlines.screens.MainScreen
+import androidx.compose.runtime.Composable
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.aayushi.laughlines.screens.QuoteScreen
 import com.aayushi.laughlines.ui.theme.LaughLinesTheme
 import com.aayushi.laughlines.viewmodel.QuoteViewModel
@@ -15,6 +17,7 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        installSplashScreen()
         setContent {
             LaughLinesTheme {
                 QuoteScreen(
@@ -23,6 +26,11 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
+}
+
+@Composable
+fun SplashScreen(){
+
 }
 
 

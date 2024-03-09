@@ -65,6 +65,9 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'androidx.appcompat:appcompat-resources:1.6.1'
 
+    //Material Design 3
+    implementation("androidx.compose.material3:material3:1.2.0")
+
 
     //okhttp
     implementation "com.squareup.okhttp3:okhttp:5.0.0-alpha.3"
@@ -95,6 +98,8 @@ dependencies {
 
     //paging
     implementation "androidx.paging:paging-compose:3.3.0-alpha03"
+    implementation "androidx.paging:paging-runtime:3.2.1"
+
 
     //retrofit
     implementation "com.squareup.retrofit2:retrofit:2.9.0"
@@ -106,5 +111,8 @@ dependencies {
 
     //serialization
     implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1"
+
+    // Splash API
+    implementation 'androidx.core:core-splashscreen:1.0.1'
 
 }

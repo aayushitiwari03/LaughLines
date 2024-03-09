@@ -17,14 +17,17 @@ class QuoteViewModel() : ViewModel()
 
     private val _quote = mutableStateOf<List<Quote>>(emptyList())
     val quote: MutableState<List<Quote>> get() = _quote
+    private var currentPage = 1
 
-//    suspend fun getRandomQuote() {
-//       try {
-//              _quote.value = repository.getQuote()
-//         } catch (e: Exception) {
-//              e.printStackTrace()
-//       }
-//    }
+    suspend fun getRandomQuote() {
+       try {
+              val response = repository.getQuote()
+                _quote.value = response
+           Log.d("QuoteViewModel", "getRandomQuote: ${response[0].results}")
+         } catch (e: Exception) {
+              e.printStackTrace()
+       }
+    }
 
     suspend fun getAllQuotes(page: Int) {
         try {
@@ -39,20 +42,21 @@ class QuoteViewModel() : ViewModel()
                     totalPages = response.totalPages
                 )
             }
-            _quote.value = result
+            _quote.value += result
+            currentPage++
         } catch (e: Exception) {
             e.printStackTrace()
         }
     }
 
 
-//    suspend fun searchQuotes(query: String, page: Int) {
-//        try {
-//            _quote.value = repository.searchQuotes(query, page)
-//        } catch (e: Exception) {
-//            e.printStackTrace()
-//        }
-//    }
+    suspend fun searchQuotes(query: String, page: Int) {
+        try {
+            _quote.value = repository.searchQuotes(query, page)
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+    }
 
 
 

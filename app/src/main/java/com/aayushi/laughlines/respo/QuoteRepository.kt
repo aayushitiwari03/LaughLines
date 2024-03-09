@@ -10,10 +10,12 @@ class QuoteRepository(
 ) {
     private val api = RetrofitInstance.apiService
 
-    //suspend fun getQuote() = api.getRandomQuote()
+    suspend fun getQuote() : List<Quote>{
+        return api.getRandomQuote()
+    }
     suspend fun getAllQuotes(page: Int) : Quote{
         return api.getAllQuotes(page)
     }
-//    suspend fun searchQuotes(query: String, page: Int) = api.searchQuotes(query, page)
+    suspend fun searchQuotes(query: String, page: Int) = api.searchQuotes(query, page)
 
 }
