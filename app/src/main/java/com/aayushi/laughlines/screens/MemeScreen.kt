@@ -1,8 +1,9 @@
 package com.aayushi.laughlines.screens
 
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 
 @Composable
-fun MainScreen() {
-    TODO()
+fun MemeScreen() {
+    Text(text = "Meme Screen")
 }
